@@ -1,0 +1,22 @@
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent { 
+  myForm:FormGroup;
+  data;
+   
+    constructor(private formBuilder : FormBuilder) { }
+     
+    ngOnInit() {
+    this.myForm = this.formBuilder.group(({
+      item:['', Validators.required]
+
+      }))
+   
+  }
+}
